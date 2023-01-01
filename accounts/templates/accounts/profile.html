@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+{% load bootstrap4 %}
+{% block body %}
+
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text">
+                    <h3>{{job.title}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+<div class="job_details_area">
+    <div class="container">
+ 
+            <div class="col-lg-8 mx-auto">
+                <div class="job_sumary">
+                    <div class="summery_header">
+                        <h3>Profile Summery</h3>
+                    </div>
+                    <div class="job_content">
+                        <ul>
+                            <li>Name : <span>{{profile}}</span></li>
+                            <li>Email: <span> {{profile.user.email}}</span></li>
+                            <li>Adress: <span>{{profile.address}}</span></li>
+                            <li>Avatar:<span><img src="{{profile.image.url}} " width="75" height="75"></span></li>
+
+                            <a class="submit_btn"  href="{% url 'accounts:profile_edit' %} " >
+                                <button class="boxed-btn3 w-100" type="submit">Edit Now</button>
+                                
+                            </a>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock body %}
